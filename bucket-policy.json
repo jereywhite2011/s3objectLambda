@@ -1,0 +1,18 @@
+{
+    "Version": "2012-10-17",
+    "Id": "Policy1616956845004",
+    "Statement": [
+        {
+            "Sid": "Stmt1616956827800",
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::jeremiah-white-bucket/*",
+            "Condition": {
+                "StringNotLike": {
+                    "s3:DataAccessPointArn": "arn:aws:s3:us-east-2:587941359663:accesspoint/redact-accesspoint"
+                }
+            }
+        }
+    ]
+}

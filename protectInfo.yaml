@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: An AWS Serverless Specification template describing your function.
+Resources:
+  redactInfo:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.8
+      CodeUri: .
+      Description: ''
+      MemorySize: 128
+      Timeout: 60
+      Role: 'arn:aws:iam::587941359663:role/service-role/redactInfo-role-bvgqplea'
+      Environment:
+        Variables:
+          PROTECTED_KEYS: 'name,SSN'
+          REDACTION_GROUP: redactGroup
+          REDACTION_MODE: REPLACE
+          ROTATION: '4'
+          TOKENIZATION_GROUP: tokenGroup
+          TOKENIZATION_INTEGER: 0123456789
+          TOKENIZATION_STRING: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.
