@@ -1,0 +1,20 @@
+ROOT PERMISSIONS
++++++++++++++++++
+Object from the S3 bucket using root permissions
+An error occurred (AccessDenied) when calling the GetObject operation: Access Denied
+Object from the access point using root permissions
+{"ID":1,"name":"John Doe","SSN":"123-45-6789","desc":"this is a description"}
+Object from the lambda using root permissions
+{"ID":1,"name":"John Doe","SSN":"123-45-6789","desc":"this is a description"}
+REDACT PERMISSIONS
++++++++++++++++++
+Object from the access point using redact permissions
+An error occurred (AccessDenied) when calling the GetObject operation: Access Denied
+Object from the lambda using redact permissions
+{"ID": 1, "name": "********", "SSN": "***-**-****", "desc": "this is a description"}
+TOKEN PERMISSIONS
++++++++++++++++++
+Object from the access point using token permissions
+An error occurred (AccessDenied) when calling the GetObject operation: Access Denied
+Object from the lambda using token permissions
+{"ID": 1, "name": "Nahu Xko", "SSN": "570-49-5209", "desc": "this is a description"}
