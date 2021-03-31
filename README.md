@@ -1,5 +1,7 @@
 # s3objectLambda
 
+This repository contains 2 lambdas for 1) tagging objects uploaded to an S3 bucket (populate-tag) and 2) redacting/tokenizing data being pulled out of the S3 bucket (productInfo). The first lambda function will ensure that new data in the bucket is properly tagged for both redaction and tokenization whereas the second lambda function will redact, protect, or provide the contents of that bucket, depending on the requesting user.
+
 Below are a few instructions on how to setup this function.
 
 ## Upload Lambda Functions
